@@ -31,6 +31,10 @@ public class Sessao {
 	
 	public Sessao() {}
 	
+	public LocalTime getHorarioTermino() {
+		return this.horario.plusMinutes(filme.getDuracao().toMinutes());
+	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -54,8 +58,6 @@ public class Sessao {
 	}
 	public void setFilme(Filme filme) {
 		this.filme = filme;
-	}
-	
-	
+	}	
 
 }
