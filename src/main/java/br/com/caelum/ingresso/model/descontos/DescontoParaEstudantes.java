@@ -7,11 +7,11 @@ public class DescontoParaEstudantes implements Desconto{
 	@Override
 	public BigDecimal aplicarDescontoSobre(BigDecimal precoOriginal) {
 		// TODO Auto-generated method stub
-		return precoOriginal.subtract(trintaPorCentoSobre(precoOriginal));
-	}
-	
-	private BigDecimal trintaPorCentoSobre(BigDecimal precoOriginal) {
-		return precoOriginal.multiply(new BigDecimal("0.3"));
+		return precoOriginal.divide(new BigDecimal("2.0"));
 	}
 
+	@Override
+	public String getDescricao() {
+		return "Desconto Estudante";
+	}
 }

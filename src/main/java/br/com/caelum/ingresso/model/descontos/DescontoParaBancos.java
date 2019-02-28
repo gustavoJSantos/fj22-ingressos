@@ -2,18 +2,21 @@ package br.com.caelum.ingresso.model.descontos;
 
 import java.math.BigDecimal;
 
-public class SemDesconto implements Desconto{
-
+public class DescontoParaBancos implements Desconto{
+	
 	@Override
 	public BigDecimal aplicarDescontoSobre(BigDecimal precoOriginal) {
 		// TODO Auto-generated method stub
-		return precoOriginal;
+		return precoOriginal.subtract(trintaPorCentoSobre(precoOriginal));
+	}
+	
+	private BigDecimal trintaPorCentoSobre(BigDecimal precoOriginal) {
+		return precoOriginal.multiply(new BigDecimal("0.3"));
 	}
 	
 	@Override
 	public String getDescricao() {
 		return "Normal";
 	}
-	
 
 }
